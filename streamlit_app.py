@@ -251,7 +251,7 @@ st.dataframe(df_plan)
 
 # KPIs
 total_cost = df_plan["daily_cost_total"].sum()
-total_hours = df_plan["hours_per_person_per_shift"].sum() + df_plan["ot_hours_per_person"].sum()
+total_hours = sum((row['hours_per_person_per_shift'] + row['ot_hours_per_person']) * row['headcount'] for idx, row in df_plan.iterrows())
 st.subheader("KPIs")
 st.metric("Total Cost ($)", round(total_cost,2))
 st.metric("Total Hours", round(total_hours,2))
@@ -279,3 +279,4 @@ df_plan.to_excel(excel_path, index=False)
 st.download_button("Download Excel", open(excel_path, "rb").read(),
                    file_name="adjusted_plan.xlsx",
                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+
