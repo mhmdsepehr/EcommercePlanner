@@ -1,0 +1,25 @@
+{
+  "productivity_units_per_hour": 15,
+  "headcount_max_per_shift": 25,
+  "max_hours_per_shift": 8,
+  "max_ot_hours_per_person": 2,
+  "holidays": [
+    "2025-09-01","2025-08-31" 
+  ],
+  "first_day_backlog": 4383,
+  "backlog_threshold_days": 3.0,
+  "max_days_over_threshold": 3,
+  "min_backlog_days": 0.8,
+  "regular_rate": 21,
+  "ot_multiplier": 1.5,
+  "weekend_premium": 1.5,
+  "weekend_activation_cost": 0,
+  "max_output_per_shift": 6000,
+  "shift_calendar": [
+    {
+      "start": "2025-11-17",
+      "end": "2025-12-31",
+      "shifts": 2
+    }
+  ]
+}
